@@ -111,7 +111,7 @@ York: Wiley, 1965
 
 ## Contact
 
-If you have any further questions or want to discuss Active Learning with me or want to contribute your own Active Learning approaches into our toolkit, please contact xyzhan2@my.cityu.edu.hk (my spare email is sinezhan17@gmail.com).
+If you have any further questions or want to discuss Active Learning with me or want to contribute your own Active Learning approaches into our toolkit, please contact xyzhan2-c@my.cityu.edu.hk (my spare email is sinezhan17@gmail.com).
 
 
 
