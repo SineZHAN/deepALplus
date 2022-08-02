@@ -24,7 +24,7 @@ Please cite the original paper if you use this method.
 
 class BadgeSampling(Strategy):
     def __init__(self, dataset, net, args_input, args_task):
-        super(BadgeSampling, self).__inicm(s, 2) for s in X])
+        super(BadgeSampling, self).__init(s, 2) for s in X])
     mu = [X[ind]]
     indsAll = [ind]
     centInds = [0.] * len(X)
