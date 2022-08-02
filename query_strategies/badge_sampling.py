@@ -24,7 +24,17 @@ Please cite the original paper if you use this method.
 
 class BadgeSampling(Strategy):
     def __init__(self, dataset, net, args_input, args_task):
-        super(BadgeSampling, self).__init__(s, 2) for s in X])
+        super(BadgeSampling, self).__init__(dataset, net, args_input, args_task)
+
+    def query(self, n):
+        unlabeled_idxs, unlabeled_data = self.dataset.get_unlabeled_data()
+        gradEmbedding = self.get_grad_embeddings(unlabeled_data)
+        chosen = init_centers(gradEmbedding, n)
+        return unlabeled_idxs[chosen]
+
+# kmeans ++ initialization
+def init_centers(X, K):
+    ind = np.argmax([np.linalg.norm(s, 2) for s in X])
     mu = [X[ind]]
     indsAll = [ind]
     centInds = [0.] * len(X)
