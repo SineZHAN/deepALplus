@@ -215,7 +215,6 @@ class CIFAR10_Net_LPL(nn.Module):
 		self.classifier = nn.Linear(512, num_classes)
 
 		self.features[0] = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
-		self.feature0[0] = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
 		self.dim = resnet18.fc.in_features
 
 		
