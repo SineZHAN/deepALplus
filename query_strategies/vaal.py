@@ -85,7 +85,7 @@ class VAAL(Strategy):
 					total_vae_loss = unsup_loss + transductive_loss + adv_param * dsc_loss
 
 					opt_vae.zero_grad()
-					dsc_loss.backward()
+					total_vae_loss.backward()
 					opt_dis.step()
 
 	def pred_dis_score_vaal(self, data):
