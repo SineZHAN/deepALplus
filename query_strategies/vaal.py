@@ -32,7 +32,7 @@ class VAAL(Strategy):
 		uncertainties = self.pred_dis_score_vaal(unlabeled_data)
 		return unlabeled_idxs[uncertainties.sort(descending=True)[1][:n]]
 
-	def train_vaal(self, total_epoch=30,num_vae_steps=1, beta=1, adv_param=1):
+	def train_vaal(self, total_epoch=30,num_vae_steps=2, beta=1, adv_param=1):
 		
 		n_epoch = total_epoch
 		num_vae_steps=num_vae_steps
@@ -86,6 +86,25 @@ class VAAL(Strategy):
 
 					opt_vae.zero_grad()
 					total_vae_loss.backward()
+					opt_vae.step()
+				# disc
+				for count in range(num_vae_steps):
+					with torch.no_grad():
+						_, _, mu, _ = self.vae(label_x)
+						_, _, unlabel_mu, _ = self.vae(unlabel_x)
+				
+					label_preds = self.dis(mu)
+					unlabel_preds = self.dis(unlabel_mu)
+					
+					label_preds_real = torch.ones(label_x.size(0)).cuda()
+					unlabel_preds_real = torch.ones(unlabel_x.size(0)).cuda()
+					
+					bce_loss = nn.BCELoss()
+					dsc_loss = bce_loss(label_preds, label_preds_real) + bce_loss(unlabel_preds, unlabel_preds_real)
+
+					
+					opt_dis.zero_grad()
+					dsc_loss.backward()
 					opt_dis.step()
 
 	def pred_dis_score_vaal(self, data):
