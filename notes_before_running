@@ -1,0 +1,14 @@
+This file would record some tips that use this toolkit. I will update it from time to time.
+
+1. About KMeansSampling with Faiss library, you can shuffle the unlabeled data (shuffle the index) to get more fair performance.
+
+2. In demo.py, can set: 
+------------------------------------------
+#fix random seed
+np.random.seed(SEED)
+torch.manual.seed(SEED)
+torch.backends.cudnn.enabled=True
+torch.backends.cudnn.benchmark=False
+torch.backends.cudnn.deterministic=True
+------------------------------------------
+if one need to run comparative experiments multiple times across various AL sampling strategies.
