@@ -295,8 +295,8 @@ def get_PneumoniaMNIST(handler, args_task):
     random.shuffle(idx_test)
     X_te = [test_imgs[i] for i in idx_test]
     Y_te = [test_labels[i] for i in idx_test]
-    X_te = np.array(X_tr)
-    Y_te = torch.from_numpy(np.array(Y_tr)).long()
+    X_te = np.array(X_te)
+    Y_te = torch.from_numpy(np.array(Y_te)).long()
 
     return Data(X_tr, Y_tr, X_te, Y_te, handler, args_task)
 
