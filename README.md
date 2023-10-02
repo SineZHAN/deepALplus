@@ -1,6 +1,6 @@
 # DeepAL+: Deep Active Learning Toolkit
 
-DeepAL+ is a extended toolkit originated from [DeepAL toolkit](https://github.com/ej0cl6/deep-active-learning). 
+DeepAL+ is an extended toolkit originated from [DeepAL toolkit](https://github.com/ej0cl6/deep-active-learning). 
 Including python implementations of the following active learning algorithms:
 
 - Random Sampling
@@ -20,11 +20,11 @@ Including python implementations of the following active learning algorithms:
 - Variational Adversarial Active Learning [12]
 - Wasserstein Adversarial Active Learning [13]
 
-We support 10 datasets, *MNIST*, *FashionMNIST*, *EMNIST*, *SVHN*, *CIFAR10*, *CIFAR100*, *Tiny ImageNet*, *BreakHis*, *PneumoniaMNIST*, *Waterbirds*. One can add new dataset by adding new function `get_newdataset()` in `data.py`.
+We support 10 datasets, *MNIST*, *FashionMNIST*, *EMNIST*, *SVHN*, *CIFAR10*, *CIFAR100*, *Tiny ImageNet*, *BreakHis*, *PneumoniaMNIST*, *Waterbirds*. One can add a new dataset by adding a new function `get_newdataset()` in `data.py`.
 
-*Tiny ImageNet*, *BreakHis*, *PneumoniaMNIST* need to be download manually, the corresponding data addresses could be found in `data.py`.
+*Tiny ImageNet*, *BreakHis*, *PneumoniaMNIST* need to be downloaded manually, the corresponding data addresses can be found in `data.py`.
 
-In DeepAL+, we use **ResNet18** as basic classifier. One can replace it to other basic classifiers and add them to `nets.py`.
+In DeepAL+, we use **ResNet18** as the basic classifier. One can replace it with other basic classifiers and add them to `nets.py`.
 
 ## Prerequisites 
 
@@ -41,7 +41,7 @@ In DeepAL+, we use **ResNet18** as basic classifier. One can replace it to other
 - opencv-python    4.5.5.64
 - wilds            2.0.0 (for waterbirds dataset only)
 
-You can also use the following command to install conda environment
+You can also use the following command to install the conda environment
 
 ```
 conda env create -f environment.yml
@@ -63,12 +63,12 @@ conda env create -f environment.yml
       -g 0
 ```
 See `arguments.py` for more instructions.
-We have also construct a comparative survey based on DeepAL+. 
-Please refer [here](https://arxiv.org/pdf/2203.13450.pdf) for more details.
+We have also constructed a comparative survey based on DeepAL+. 
+Please refer to [here](https://arxiv.org/pdf/2203.13450.pdf) for more details.
 
 ## Citing
 
-If you use our code in your research or applications, please consider citing our paper.
+Please consider citing our paper if you use our code in your research or applications.
 
 ```
 @article{zhan2022comparative,
@@ -111,7 +111,7 @@ York: Wiley, 1965
 
 ## Contact
 
-If you have any further questions or want to discuss Active Learning with me or want to contribute your own Active Learning approaches into our toolkit, please contact xyzhan2-c@my.cityu.edu.hk (my spare email is sinezhan17@gmail.com).
+If you have any further questions or want to discuss Active Learning with me or contribute your own Active Learning approaches to our toolkit, please contact xueyingz@andrew.cmu.edu (my spare email is sinezhan17@gmail.com).
 
 
 
